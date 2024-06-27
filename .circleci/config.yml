@@ -122,12 +122,12 @@ jobs:
     steps:
       - run: echo "Slack notification"
       - slack/notify:
-          event: "fail"
-          channel: "${SLACK_DEFAULT_CHANNEL}"
+          event: fail
+          channel: ${SLACK_DEFAULT_CHANNEL}
           template: basic_fail_1
       - slack/notify:
-          channel: ABCXYZ
           event: pass
+          channel: ${SLACK_DEFAULT_CHANNEL}
           template: success_tagged_deploy_1
 
 workflows:
