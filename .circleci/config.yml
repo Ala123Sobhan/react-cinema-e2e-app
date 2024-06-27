@@ -125,26 +125,10 @@ jobs:
           event: fail
           channel: ${SLACK_DEFAULT_CHANNEL}
           template: basic_fail_1
-          attachments: |
-            [
-              {
-                "title": "Build Failed",
-                "text": "Branch: ${CIRCLE_BRANCH}",
-                "color": "danger"
-              }
-            ]
       - slack/notify:
           event: pass
           channel: ${SLACK_DEFAULT_CHANNEL}
-          template: success_tagged_deploy_1
-          attachments: |
-            [
-              {
-                "title": "Build Succeeded",
-                "text": "Branch: ${CIRCLE_BRANCH}",
-                "color": "good"
-              }
-            ]
+          template: basic_success_1
 
 workflows:
   build_and_deploy:
