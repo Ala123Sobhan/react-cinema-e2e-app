@@ -125,16 +125,26 @@ jobs:
           event: fail
           channel: ${SLACK_DEFAULT_CHANNEL}
           template: basic_fail_1
-          custom:
-            - title: "Build Failed on Branch: ${CIRCLE_BRANCH}"
-            - text: "The build on branch ${CIRCLE_BRANCH} has failed. Please check the details."
+          attachments: |
+            [
+              {
+                "title": "Build Failed",
+                "text": "Branch: ${CIRCLE_BRANCH}",
+                "color": "danger"
+              }
+            ]
       - slack/notify:
           event: pass
           channel: ${SLACK_DEFAULT_CHANNEL}
           template: success_tagged_deploy_1
-          custom:
-            - title: "Build Succeeded on Branch: ${CIRCLE_BRANCH}"
-            - text: "The build on branch ${CIRCLE_BRANCH} has succeeded!!!"
+          attachments: |
+            [
+              {
+                "title": "Build Succeeded",
+                "text": "Branch: ${CIRCLE_BRANCH}",
+                "color": "good"
+              }
+            ]
 
 workflows:
   build_and_deploy:
