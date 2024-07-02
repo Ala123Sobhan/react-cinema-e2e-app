@@ -48,6 +48,7 @@ aliases:
     run:
       name: Build Project
       command: |
+        echo 'export DISABLE_ESLINT_PLUGIN=true' >> $BASH_ENV
         npm install
         npm run build
         cd build
