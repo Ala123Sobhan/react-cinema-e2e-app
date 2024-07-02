@@ -1,0 +1,37 @@
+.paginate-button {
+    background-color: #dd003f;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    margin: 0 15px;
+    outline: none !important;
+  }
+  
+  .disable {
+    cursor: none;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .pageCount {
+    color: #ffffff;
+    margin: 0 5px;
+    padding: 10px 5px;
+  }
+
+
+/* Add media query for mobile devices */
+@media (max-width: 600px) {
+  .paginate-button {
+    display: inline-block; /* Ensure buttons are still inline */
+    margin: 0 5px; /* Adjust margin for spacing */
+    min-width: auto; 
+  }
+
+  .pageCount {
+    display: inline-block; /* Ensure page count is inline */
+    margin: 0 5px; /* Adjust margin for spacing */
+  }
+}
