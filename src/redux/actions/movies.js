@@ -28,6 +28,8 @@ export const getMovies = (type, pageNumber) => async (dispatch) => {
   } catch (error) {
     if (error.response) {
       dispatchMethod(SET_ERROR, error.response.data.message, dispatch);
+    } else {
+      dispatchMethod(SET_ERROR, error.message, dispatch);
     }
   }
 };
@@ -77,6 +79,8 @@ export const searchResult = (query) => async (dispatch) => {
   } catch (error) {
     if (error.response) {
       dispatchMethod(SET_ERROR, error.response.data.message, dispatch);
+    } else {
+      dispatchMethod(SET_ERROR, error.message, dispatch);
     }
   }
 };
@@ -99,7 +103,10 @@ export const movieDetails = (id) => async (dispatch) => {
     dispatchMethod(MOVIE_DETAILS, resp, dispatch);
   } catch (error) {
     if (error.response) {
-      dispatchMethod(SET_ERROR, error.response.data.message, dispatch);
+      console.log(error.response.data);
+      dispatchMethod(SET_ERROR, error.response.data, dispatch);
+    } else {
+      dispatchMethod(SET_ERROR, error.message, dispatch);
     }
   }
 };
