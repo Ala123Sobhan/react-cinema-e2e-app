@@ -2,12 +2,6 @@
 
 This project demonstrates a modern React application setup with continuous integration using CircleCI and deployment on AWS using S3, CloudFront, and Route 53. This setup ensures efficient development workflows, automated testing, and robust deployment strategies.
 
-## Table of Contents
--[Introduction](#introduction)
--[Technologies Used](#technologies-used)
--[Features](#features)
-
-
 ## Introduction
 
 This project showcases a scalable React application integrated with a CI/CD pipeline and deployed on AWS for high availability and performance. It highlights the use of industry best practices in web development and cloud deployment.
