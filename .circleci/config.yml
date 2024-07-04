@@ -74,6 +74,16 @@ jobs:
           name: Run Linting
           command: npm run lint
 
+  unit-test:
+    executor: app-executor
+    steps:
+      - checkout
+      - *show-current-branch-name
+      - *restore-cache
+      - run:
+          name: run unit tests
+          command: npm run test
+
   deploy-to-aws-s3:
     executor: app-executor
     steps:
@@ -143,6 +153,15 @@ workflows:
       #           - develop
       #           - staging
       #           - master
+      - unit-test:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - staging
+                - master
       - deploy-to-aws-s3:
           requires:
             - build

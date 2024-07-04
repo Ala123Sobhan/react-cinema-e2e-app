@@ -1,8 +1,8 @@
 import { SET_ERROR } from "../types";
 
-const initialState = "";
+const initialState = null; // Use null instead of empty string
 
-export default (state = initialState, action) => {
+const errorReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_ERROR:
       return action.payload;
@@ -10,3 +10,5 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+export default errorReducer;
