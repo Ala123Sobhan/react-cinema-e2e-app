@@ -74,6 +74,16 @@ jobs:
           name: Run Linting
           command: npm run lint
 
+  unit-test:
+    executor: app-executor
+    steps:
+      - checkout
+      - *show-current-branch-name
+      - *restore-cache
+      - run:
+          name: run unit tests
+          command: npm run test
+
   deploy-to-aws-s3:
     executor: app-executor
     steps:
@@ -128,7 +138,7 @@ jobs:
       - slack/notify:
           event: pass
           channel: ${SLACK_DEFAULT_CHANNEL}
-          template: success_tagged_deploy_1
+          template: basic_success_1
 
 workflows:
   build_and_deploy:
@@ -143,9 +153,18 @@ workflows:
       #           - develop
       #           - staging
       #           - master
-      - deploy-to-aws-s3:
+      - unit-test:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - develop
+                - staging
+                - master
+      - deploy-to-aws-s3:
+          requires:
+            - unit-test
           filters:
             branches:
               only:
