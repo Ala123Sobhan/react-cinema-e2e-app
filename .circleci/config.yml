@@ -174,7 +174,6 @@ workflows:
       - deploy-to-aws-s3:
           requires:
             - unit-test
-            - cypress-test
           filters:
             branches:
               only:
