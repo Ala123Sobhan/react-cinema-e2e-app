@@ -99,6 +99,10 @@ jobs:
           name: start the server
           command: npm run start &
       - run:
+          name: Wait for server to be available
+          command: |
+            npx wait-on http://localhost:3000
+      - run:
           name: run cypress tests
           command: npx cypress run
       - run:
