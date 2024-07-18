@@ -93,7 +93,7 @@ jobs:
       - run:
           name: Run Cypress tests
           command: |
-            npm install
+            npm install cypress
             npm run start &
             npx cypress run --browser chrome
 
