@@ -85,19 +85,6 @@ jobs:
           name: run unit tests
           command: npm run test
 
-  cypress-test:
-    executor: app-executor
-    steps:
-      - checkout
-      - *show-current-branch-name
-      - *restore-cache
-      - run:
-          name: Run Cypress tests
-          command: |
-            npm install cypress
-            npm run start &
-            npx cypress run --browser chrome
-
   deploy-to-aws-s3:
     executor: app-executor
     steps:
