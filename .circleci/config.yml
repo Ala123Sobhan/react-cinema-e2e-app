@@ -98,7 +98,7 @@ jobs:
       - run:
           name: start the server
           command: npm run start &
-      - run:
+      - cypress/run:
           name: run cypress tests
           command: npx cypress run
       - run:
@@ -195,6 +195,7 @@ workflows:
       - deploy-to-aws-s3:
           requires:
             - unit-test
+            - e2e-test
           filters:
             branches:
               only:
