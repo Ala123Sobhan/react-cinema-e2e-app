@@ -8,6 +8,14 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
+
+Cypress.Commands.add("searchMovie", (mvi) => {
+  cy.get(".grid-detail > .grid-detail-title").each(($el) => {
+    const actualText = $el.text().trim().toLowerCase();
+    const expectedText = mvi.toLowerCase();
+    expect(actualText).to.equal(expectedText);
+  });
+});
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
