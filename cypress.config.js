@@ -1,7 +1,8 @@
 const { defineConfig } = require("cypress");
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = defineConfig({
+  projectId: "in8nj3",
   e2e: {
     env: {
       apiKey: process.env.REACT_APP_API_SECRET,

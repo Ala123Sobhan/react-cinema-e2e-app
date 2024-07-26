@@ -156,8 +156,8 @@ workflows:
                 - master
       - cypress/run:
           start-command: "npm run start"
-          cypress-command: "npx cypress run"
-          parallelism: 4
+          cypress-command: "npx cypress run --record --parallel"
+          parallelism: 2
       - deploy-to-aws-s3:
           requires:
             - unit-test
