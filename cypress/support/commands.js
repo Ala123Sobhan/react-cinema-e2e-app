@@ -10,11 +10,23 @@
 //
 
 Cypress.Commands.add("searchMovie", (mvi) => {
-  cy.get(".grid-detail > .grid-detail-title").each(($el) => {
-    const actualText = $el.text().trim().toLowerCase();
-    const expectedText = mvi.toLowerCase();
-    expect(actualText).to.equal(expectedText);
-  });
+  let found;
+  cy.get(".grid-detail > .grid-detail-title")
+    .each(($el) => {
+      const actualText = $el.text().trim().toLowerCase();
+      const expectedText = mvi.toLowerCase();
+
+      if (actualText == expectedText) {
+        found = true;
+        expect(found).to.equal(true);
+        return false;
+      }
+    })
+    .then(() => {
+      if (!found) {
+        throw new Error(`Movie "${mvi}" not found.`);
+      }
+    });
 });
 //
 // -- This is a parent command --
