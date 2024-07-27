@@ -5,8 +5,7 @@ This project demonstrates a modern React application setup with continuous integ
 
 ## Introduction
 
-This project showcases a scalable React application integrated with a CI/CD pipeline with automated tests. Its deployed on AWS for high availability and performance. It highlights the use of industry best practices in web development and cloud deployment.
-
+This project showcases a scalable React application integrated with a CI/CD pipeline with automated tests. Its deployed on AWS for high availability and performance.
 ## Technologies Used
 
 - **React** - Frontend library for building user interfaces
