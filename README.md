@@ -2,12 +2,7 @@
 
 This project demonstrates a modern React application setup with continuous integration using CircleCI and deployment on AWS using S3, CloudFront, and Route 53. This setup ensures efficient development workflows, automated testing, and robust deployment strategies.
 
-
-## Introduction
-
-This project showcases a scalable React application integrated with a CI/CD pipeline with automated tests. Its deployed on AWS for high availability and performance.
 ## Technologies Used
-
 - **React** - Frontend library for building user interfaces
 - **CircleCI** - Continuous integration and delivery platform
 - **AWS S3** - Object storage for static site hosting
@@ -18,8 +13,9 @@ This project showcases a scalable React application integrated with a CI/CD pipe
 ## Features
 
 - Modern React Movie application with a responsive design
-- Continuous integration with automated testing and deployment using CircleCI
+- Continuous integration with automated testing and deployment using CircleCI for development, staging and production environments
 - Automated Cypress tests for reliable and maintainable end-to-end testing integrated in CircleCI with Cypress Cloud recording enabled for comprehensive test run visibility and debugging
+- CircleCI job success/failure notification with detailed information sent to Slack.
 - High availability and performance with AWS S3 and CloudFront
 - Custom domain management with AWS Route 53
 
