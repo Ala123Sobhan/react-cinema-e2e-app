@@ -1,6 +1,5 @@
 # React Application with CI/CD and AWS Deployment
-
-This project demonstrates a modern React application setup with continuous integration using CircleCI and deployment on AWS using S3, CloudFront, and Route 53. This setup ensures efficient development workflows, automated testing, and robust deployment strategies.
+This project demonstrates a scalable React application designed with modern web development practices. It integrates seamlessly with a CI/CD pipeline to ensure continuous delivery via CircleCI. The application is deployed on AWS, leveraging various AWS services to achieve high availability and optimal performance. End-to-end testing is implemented using Cypress, with tests automated within the CI pipeline and recordings available for thorough test run analysis and debugging.
 
 ## Technologies Used
 - **React** - Frontend library for building user interfaces
