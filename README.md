@@ -7,7 +7,6 @@ This project demonstrates a modern React application setup with continuous integ
 -[Technologies Used](#technologies-used)
 -[Features](#features)
 
-
 ## Introduction
 
 This project showcases a scalable React application integrated with a CI/CD pipeline and deployed on AWS for high availability and performance. It highlights the use of industry best practices in web development and cloud deployment.
@@ -19,11 +18,13 @@ This project showcases a scalable React application integrated with a CI/CD pipe
 - **AWS S3** - Object storage for static site hosting
 - **AWS CloudFront** - Content delivery network (CDN) for fast and secure distribution
 - **AWS Route 53** - Scalable domain name system (DNS) web service
+- **CYPRESS E2E** - End-to-end testing framework
 
 ## Features
 
 - Modern React Movie application with a responsive design
 - Continuous integration with automated testing and deployment using CircleCI
+- Automated Cypress tests for reliable and maintainable end-to-end testing integrated in CircleCI with Cypress Cloud recording enabled for comprehensive test run visibility and debugging
 - High availability and performance with AWS S3 and CloudFront
 - Custom domain management with AWS Route 53
 
