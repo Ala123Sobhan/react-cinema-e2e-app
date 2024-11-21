@@ -12,6 +12,7 @@
     "axios": "^1.7.2",
     "cypress": "^13.13.0",
     "cypress-axe": "^1.5.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

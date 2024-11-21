@@ -2,14 +2,13 @@ const { defineConfig } = require("cypress");
 require("dotenv").config();
 
 module.exports = defineConfig({
-  projectId: "in8nj3",
+  reporter: "cypress-mochawesome-reporter",
+
   e2e: {
-    env: {
-      apiKey: process.env.REACT_APP_API_SECRET,
-    },
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://www.saucedemo.com/v1",
+
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require("cypress-mochawesome-reporter/plugin")(on);
     },
   },
 });
