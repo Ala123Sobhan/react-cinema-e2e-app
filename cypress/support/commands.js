@@ -28,6 +28,11 @@ Cypress.Commands.add("searchMovie", (mvi) => {
       }
     });
 });
+
+Cypress.Commands.add("getRandomId", () => {
+  let rand = Math.floor(Math.random() * 9000) + 1000;
+  return rand;
+});
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
