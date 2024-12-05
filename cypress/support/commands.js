@@ -33,6 +33,26 @@ Cypress.Commands.add("getRandomId", () => {
   let rand = Math.floor(Math.random() * 9000) + 1000;
   return rand;
 });
+
+Cypress.Commands.add("getProductTotalPrice", (indices, expectedTotal) => {
+  let total = 0;
+
+  cy.wrap(null)
+    .then(() => {
+      indices.forEach((index) => {
+        cy.get("p.product-price")
+          .eq(index)
+          .invoke("text")
+          .then((text) => {
+            total += Number(text.trim());
+          });
+      });
+    })
+    .then(() => {
+      expect(total).to.equal(Number(expectedTotal));
+    });
+});
+
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
